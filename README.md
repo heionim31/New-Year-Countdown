@@ -1,5 +1,4 @@
 <h1>New Year Countdown</h1>
-<h3 align="center">An aspiring frontend developer from Philippines</h3>
 
 - This a **New Year Countdown** project with simple responsive design
 
