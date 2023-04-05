@@ -7,14 +7,15 @@ const countSeconds = document.getElementById("seconds");
 setInterval(countDown);
 
 function countDown() {
-    const dateTarget = new Date('Jan 1 2023 12:00:00').getTime();
+     // January 1st of the next year
+    const yearEnd = new Date(new Date().getFullYear() + 1, 0, 1).getTime();
     const dateNow = Date.now();
-    const timeToCount = dateTarget - dateNow;
+    const timeLeft = yearEnd - dateNow;
 
-    let seconds = Math.floor((timeToCount / 1000) % 60);
-    let minutes = Math.floor((timeToCount / (1000 * 60)) % 60);
-    let hours = Math.floor((timeToCount / (1000 *60 * 60)) % 60);
-    let days = Math.floor((timeToCount / (1000 * 60 * 60 * 24)));
+    let seconds = Math.floor((timeLeft / 1000) % 60);
+    let minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+    let hours = Math.floor((timeLeft / (1000 *60 * 60)) % 60);
+    let days = Math.floor((timeLeft / (1000 * 60 * 60 * 24)));
 
     countDays.textContent = days;
     countHours.textContent = hours;
